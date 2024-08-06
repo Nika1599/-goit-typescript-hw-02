@@ -1,6 +1,6 @@
 import ImageCard from "../ImageCart/ImageCard";
 
-const ImageGallery = ({ images }) => {
+const ImageGallery = ({ images, onImageClick }) => {
   if (images.length === 0) {
     return null;
   }
@@ -9,7 +9,7 @@ const ImageGallery = ({ images }) => {
     <ul>
       {images.map((image) => (
         <li key={image.id}>
-          <ImageCard image={image} />
+          <ImageCard image={image} onClick={onImageClick} />
         </li>
       ))}
     </ul>
