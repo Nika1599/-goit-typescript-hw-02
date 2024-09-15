@@ -1,6 +1,16 @@
+import React from "react";
+import { Image } from "../../types";
 import ImageCard from "../ImageCart/ImageCard";
 
-const ImageGallery = ({ images, onImageClick }) => {
+interface ImageGalleryProps {
+  images: Image[];
+  onImageClick: (image: Image) => void;
+}
+
+const ImageGallery: React.FC<ImageGalleryProps> = ({
+  images,
+  onImageClick,
+}) => {
   if (images.length === 0) {
     return null;
   }

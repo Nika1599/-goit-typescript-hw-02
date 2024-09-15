@@ -1,8 +1,16 @@
+import React from "react";
 import Modal from "react-modal";
 Modal.setAppElement("#root");
+import { Image } from "../../types";
 
-const ImageModal = ({ isOpen, onClose, image }) => {
-  const handleKeyDown = (e) => {
+interface ImageModalProps {
+  isOpen: boolean;
+  image: Image;
+  onClose: () => void;
+}
+
+const ImageModal: React.FC<ImageModalProps> = ({ isOpen, onClose, image }) => {
+  const handleKeyDown = (e: KeyboardEvent) => {
     if (e.key === "Escape") {
       onClose();
     }
